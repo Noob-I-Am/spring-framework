@@ -4384,7 +4384,7 @@ example of declaring a mock service with Mockito:
 [subs="verbatim,quotes"]
 ----
 	<bean id="accountService" class="org.mockito.Mockito" factory-method="mock">
-		<constructor-arg value="org.example.AccountService"/>
+		<constructor-arg value="org.max.AccountService"/>
 	</bean>
 ----
 

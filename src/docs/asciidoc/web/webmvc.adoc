@@ -1170,7 +1170,7 @@ your Java configuration:
 [subs="verbatim,quotes"]
 ----
 	@Configuration
-	@ComponentScan("org.example.web")
+	@ComponentScan("org.max.web")
 	public class WebConfig {
 
 		// ...
@@ -1193,7 +1193,7 @@ The XML configuration equivalent:
 			http://www.springframework.org/schema/context
 			https://www.springframework.org/schema/context/spring-context.xsd">
 
-		<context:component-scan base-package="org.example.web"/>
+		<context:component-scan base-package="org.max.web"/>
 
 		<!-- ... -->
 
@@ -3114,7 +3114,7 @@ you can narrow that down to a subset of controllers via attributes on the annota
 	public class ExampleAdvice1 {}
 
 	// Target all Controllers within specific packages
-	@ControllerAdvice("org.example.controllers")
+	@ControllerAdvice("org.max.controllers")
 	public class ExampleAdvice2 {}
 
 	// Target all Controllers assignable to specific classes
@@ -4028,18 +4028,18 @@ In XML, the same:
 				class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 			<property name="converters">
 				<set>
-					<bean class="org.example.MyConverter"/>
+					<bean class="org.max.MyConverter"/>
 				</set>
 			</property>
 			<property name="formatters">
 				<set>
-					<bean class="org.example.MyFormatter"/>
-					<bean class="org.example.MyAnnotationFormatterFactory"/>
+					<bean class="org.max.MyFormatter"/>
+					<bean class="org.max.MyAnnotationFormatterFactory"/>
 				</set>
 			</property>
 			<property name="formatterRegistrars">
 				<set>
-					<bean class="org.example.MyFormatterRegistrar"/>
+					<bean class="org.max.MyFormatterRegistrar"/>
 				</set>
 			</property>
 		</bean>
@@ -4159,7 +4159,7 @@ In XML, the same:
 		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/secure/*"/>
-			<bean class="org.example.SecurityInterceptor"/>
+			<bean class="org.max.SecurityInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
 ----
@@ -4663,8 +4663,8 @@ In XML, the same:
 			path-matcher="pathMatcher"/>
 	</mvc:annotation-driven>
 
-	<bean id="pathHelper" class="org.example.app.MyPathHelper"/>
-	<bean id="pathMatcher" class="org.example.app.MyPathMatcher"/>
+	<bean id="pathHelper" class="org.max.app.MyPathHelper"/>
+	<bean id="pathMatcher" class="org.max.app.MyPathMatcher"/>
 ----
 
 

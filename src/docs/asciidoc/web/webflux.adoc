@@ -1008,7 +1008,7 @@ your Java configuration:
 [subs="verbatim,quotes"]
 ----
 	@Configuration
-	@ComponentScan("org.example.web")
+	@ComponentScan("org.max.web")
 	public class WebConfig {
 
 		// ...
@@ -2481,7 +2481,7 @@ you can narrow that down to a subset of controllers via attributes on the annota
 	public class ExampleAdvice1 {}
 
 	// Target all Controllers within specific packages
-	@ControllerAdvice("org.example.controllers")
+	@ControllerAdvice("org.max.controllers")
 	public class ExampleAdvice2 {}
 
 	// Target all Controllers assignable to specific classes

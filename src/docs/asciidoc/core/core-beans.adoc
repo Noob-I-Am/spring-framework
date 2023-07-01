@@ -5404,7 +5404,7 @@ comma/semicolon/space-separated list that includes the parent package of each cl
 [subs="verbatim,quotes"]
 ----
 	@Configuration
-	@ComponentScan(basePackages = "org.example")
+	@ComponentScan(basePackages = "org.max")
 	public class AppConfig  {
 		...
 	}
@@ -5413,7 +5413,7 @@ comma/semicolon/space-separated list that includes the parent package of each cl
 [NOTE]
 ====
 For concision, the above may have used the `value` attribute of the
-annotation, i.e. `@ComponentScan("org.example")`
+annotation, i.e. `@ComponentScan("org.max")`
 ====
 
 The following is an alternative using XML
@@ -5430,7 +5430,7 @@ The following is an alternative using XML
 			http://www.springframework.org/schema/context
 			https://www.springframework.org/schema/context/spring-context.xsd">
 
-		<context:component-scan base-package="org.example"/>
+		<context:component-scan base-package="org.max"/>
 
 	</beans>
 ----
@@ -5489,15 +5489,15 @@ and `expression` attributes. The following table describes the filtering options
 | Filter Type| Example Expression| Description
 
 | annotation (default)
-| `org.example.SomeAnnotation`
+| `org.max.SomeAnnotation`
 | An annotation to be present at the type level in target components.
 
 | assignable
-| `org.example.SomeClass`
+| `org.max.SomeClass`
 | A class (or interface) that the target components are assignable to (extend/implement).
 
 | aspectj
-| `org.example..*Service+`
+| `org.max..*Service+`
 | An AspectJ type expression to be matched by the target components.
 
 | regex
@@ -5505,7 +5505,7 @@ and `expression` attributes. The following table describes the filtering options
 | A regex expression to be matched by the target components class names.
 
 | custom
-| `org.example.MyTypeFilter`
+| `org.max.MyTypeFilter`
 | A custom implementation of the `org.springframework.core.type .TypeFilter` interface.
 |===
 
@@ -5517,7 +5517,7 @@ and using "stub" repositories instead.
 [subs="verbatim,quotes"]
 ----
 	@Configuration
-	@ComponentScan(basePackages = "org.example",
+	@ComponentScan(basePackages = "org.max",
 			includeFilters = @Filter(type = FilterType.REGEX, pattern = ".*Stub.*Repository"),
 			excludeFilters = @Filter(Repository.class))
 	public class AppConfig {
@@ -5531,7 +5531,7 @@ and the equivalent using XML
 [subs="verbatim,quotes"]
 ----
 	<beans>
-		<context:component-scan base-package="org.example">
+		<context:component-scan base-package="org.max">
 			<context:include-filter type="regex"
 					expression=".*Stub.*Repository"/>
 			<context:exclude-filter type="annotation"
@@ -5752,7 +5752,7 @@ fully-qualified class name when configuring the scanner:
 [subs="verbatim,quotes"]
 ----
 	@Configuration
-	@ComponentScan(basePackages = "org.example", nameGenerator = MyNameGenerator.class)
+	@ComponentScan(basePackages = "org.max", nameGenerator = MyNameGenerator.class)
 	public class AppConfig {
 		...
 	}
@@ -5762,8 +5762,8 @@ fully-qualified class name when configuring the scanner:
 [subs="verbatim,quotes"]
 ----
 	<beans>
-		<context:component-scan base-package="org.example"
-			name-generator="org.example.MyNameGenerator" />
+		<context:component-scan base-package="org.max"
+			name-generator="org.max.MyNameGenerator" />
 	</beans>
 ----
 
@@ -5818,7 +5818,7 @@ fully-qualified class name when configuring the scanner:
 [subs="verbatim,quotes"]
 ----
 	@Configuration
-	@ComponentScan(basePackages = "org.example", scopeResolver = MyScopeResolver.class)
+	@ComponentScan(basePackages = "org.max", scopeResolver = MyScopeResolver.class)
 	public class AppConfig {
 		...
 	}
@@ -5828,7 +5828,7 @@ fully-qualified class name when configuring the scanner:
 [subs="verbatim,quotes"]
 ----
 	<beans>
-		<context:component-scan base-package="org.example" scope-resolver="org.example.MyScopeResolver"/>
+		<context:component-scan base-package="org.max" scope-resolver="org.max.MyScopeResolver"/>
 	</beans>
 ----
 
@@ -5842,7 +5842,7 @@ the following configuration will result in standard JDK dynamic proxies:
 [subs="verbatim,quotes"]
 ----
 	@Configuration
-	@ComponentScan(basePackages = "org.example", scopedProxy = ScopedProxyMode.INTERFACES)
+	@ComponentScan(basePackages = "org.max", scopedProxy = ScopedProxyMode.INTERFACES)
 	public class AppConfig {
 		...
 	}
@@ -5852,7 +5852,7 @@ the following configuration will result in standard JDK dynamic proxies:
 [subs="verbatim,quotes"]
 ----
 	<beans>
-		<context:component-scan base-package="org.example" scoped-proxy="interfaces"/>
+		<context:component-scan base-package="org.max" scoped-proxy="interfaces"/>
 	</beans>
 ----
 
@@ -6157,7 +6157,7 @@ exact same way as when using Spring annotations:
 [subs="verbatim,quotes"]
 ----
 	@Configuration
-	@ComponentScan(basePackages = "org.example")
+	@ComponentScan(basePackages = "org.max")
 	public class AppConfig  {
 		...
 	}
