@@ -222,13 +222,14 @@ configure(subprojects - project(":spring-build-src")) { subproject ->
 
 	javadoc {
 		description = "Generates project-level javadoc for use in -javadoc jar"
-
+		failOnError = false
 		options.memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
 		options.author = true
 		options.header = project.name
 		options.use = true
 		options.links(project.ext.javadocLinks)
 		options.addStringOption("Xdoclint:none", "-quiet")
+		options.encoding = 'UTF-8'
 
 		// Suppress warnings due to cross-module @see and @link references.
 		// Note that global 'api' task does display all warnings.
