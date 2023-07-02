@@ -144,11 +144,8 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 			}
 		}
 
-		//解析前处理
 		preProcessXml(root);
-		//解析
 		parseBeanDefinitions(root, this.delegate);
-		//解析后处理
 		postProcessXml(root);
 
 		this.delegate = parent;
@@ -213,7 +210,7 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 	 * from the given resource into the bean factory.
 	 */
 	protected void importBeanDefinitionResource(Element ele) {
-		//获取resource属性值  例如 <import resource="services.xml"/>
+		//获取resource属性值 例如 <import resource="services.xml" />
 		String location = ele.getAttribute(RESOURCE_ATTRIBUTE);
 		if (!StringUtils.hasText(location)) {
 			getReaderContext().error("Resource location must not be empty", ele);
@@ -222,7 +219,7 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 
 		// Resolve system properties: e.g. "${user.dir}"
 		location = getReaderContext().getEnvironment().resolveRequiredPlaceholders(location);
-		//实际的Resource集合， import的地址对应的Resource资源集合
+		//实际加载的Resource集合, import地址对应的Resource资源集合
 		Set<Resource> actualResources = new LinkedHashSet<>(4);
 
 		// Discover whether the location is an absolute or relative URI
