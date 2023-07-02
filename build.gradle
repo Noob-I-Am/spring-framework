@@ -329,3 +329,7 @@ def qualifyVersionIfNecessary(version) {
 	}
 	return version
 }
+
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+}
