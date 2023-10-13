@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="mtService" class="org.springframework.service.impl.MyTestAddServiceImpl">
+    <bean id="mtService" class="org.springframework.service.impl.MyTestServiceImpl">
     </bean>
     <bean id="mtAddService" class="org.springframework.service.impl.MyTestAddServiceImpl">
     </bean>
