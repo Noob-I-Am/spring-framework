@@ -1,7 +1,13 @@
 buildscript {
 	repositories {
-		gradlePluginPortal()
-		maven { url "https://repo.spring.io/plugins-release" }
+		maven{ url 'https://maven.aliyun.com/repository/central'}
+		maven{ url 'https://maven.aliyun.com/repository/public' }
+		maven{ url 'https://maven.aliyun.com/repository/google'}
+		maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+		maven{ url 'https://maven.aliyun.com/repository/spring'}
+		maven{ url 'https://maven.aliyun.com/repository/spring-plugin'}
+		maven{ url 'https://maven.aliyun.com/mvn/guide'}
+		maven{ url 'https://maven.aliyun.com/repository/apache-snapshots'}
 	}
 	dependencies {
 		classpath("io.spring.gradle:propdeps-plugin:0.0.9.RELEASE")
@@ -148,8 +154,14 @@ configure(allprojects) { project ->
 	}
 
 	repositories {
-		mavenCentral()
-		maven { url "https://repo.spring.io/libs-spring-framework-build" }
+		maven{ url 'https://maven.aliyun.com/repository/central'}
+		maven{ url 'https://maven.aliyun.com/repository/public' }
+		maven{ url 'https://maven.aliyun.com/repository/google'}
+		maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+		maven{ url 'https://maven.aliyun.com/repository/spring'}
+		maven{ url 'https://maven.aliyun.com/repository/spring-plugin'}
+		maven{ url 'https://maven.aliyun.com/mvn/guide'}
+		maven{ url 'https://maven.aliyun.com/repository/apache-snapshots'}
 	}
 
 	dependencies {
@@ -276,6 +288,7 @@ configure(rootProject) {
 		testCompile(project(":spring-test"))
 		testCompile(project(":spring-tx"))
 		testCompile(project(":spring-web"))
+		testCompile(project(":test"))
 		testCompile("javax.inject:javax.inject:1")
 		testCompile("javax.resource:javax.resource-api:1.7.1")
 		testCompile("javax.servlet:javax.servlet-api:3.1.0")

@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+
+repositories {
+    maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
+    maven { url "https://maven.aliyun.com/nexus/content/repositories/jcenter" }
+    maven { url "https://maven.aliyun.com/nexus/content/repositories/spring-plugin" }
+
+}
+
+dependencies {
+    implementation project(path: ':spring-beans')
+    implementation project(path: ':spring-core')
+    implementation project(path: ':spring-context')
+    compile project(path: ':spring-core')
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
