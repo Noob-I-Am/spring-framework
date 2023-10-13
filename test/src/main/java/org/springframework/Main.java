@@ -25,6 +25,9 @@ public class Main {
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory(); // <2>
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory); // <3>
 		reader.loadBeanDefinitions(resource); // <4>
+		MyTestService mtService = factory.getBean("mtService",MyTestService.class);
+		MyTestService mtAddService = factory.getBean("mtAddService",MyTestService.class);
+		System.out.println();
 	}
 
 

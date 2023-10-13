@@ -863,6 +863,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 		}
 
 		if (existingDefinition != null || containsSingleton(beanName)) {
+			//若缓存中存在该beanName,或者单实例bean缓存中存在该beanName，则调用resetBeanDefinition，重置beanDefinition缓存
 			resetBeanDefinition(beanName);
 		}
 		else if (isConfigurationFrozen()) {
