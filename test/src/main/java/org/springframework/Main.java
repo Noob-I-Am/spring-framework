@@ -1,5 +1,6 @@
 package org.springframework;
 
+import org.springframework.beans.Action;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +14,7 @@ import org.springframework.service.MyTestService;
 public class Main {
 	public static void main(String[] args) {
 		load();
+//		start();
 //		System.out.println("Hello world!");
 	}
 
@@ -28,6 +30,8 @@ public class Main {
 		reader.loadBeanDefinitions(resource); // <4>
 		MyTestService mtService = factory.getBean("mtService",MyTestService.class);
 		MyTestService mtAddService = factory.getBean("mtAddService",MyTestService.class);
+		Action helloAction = factory.getBean("helloAction", Action.class);
+		helloAction.saySomething();
 		System.out.println();
 	}
 
@@ -36,6 +40,8 @@ public class Main {
 		ApplicationContext context = new ClassPathXmlApplicationContext("MyBeans.xml");
 		MyTestService mtService = context.getBean("mtAddService", MyTestService.class);
 		int apply = mtService.apply();
+		Action helloAction = context.getBean("helloAction", Action.class);
+		helloAction.saySomething();
 		System.out.println(apply);
 	}
 }
