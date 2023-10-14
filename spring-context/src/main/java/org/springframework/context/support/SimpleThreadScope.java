@@ -70,6 +70,7 @@ public class SimpleThreadScope implements Scope {
 		Object scopedObject = scope.get(name);
 		if (scopedObject == null) {
 			scopedObject = objectFactory.getObject();
+			//放入缓存
 			scope.put(name, scopedObject);
 		}
 		return scopedObject;
