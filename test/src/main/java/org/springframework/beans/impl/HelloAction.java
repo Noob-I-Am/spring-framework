@@ -9,12 +9,13 @@ import org.springframework.stereotype.Service;
 @Service("helloAction")
 public class HelloAction implements Action {
 
+
 	@Qualifier("mtService")
 	@Autowired
 	MyTestService myTestService;
 
 	@Override
 	public void saySomething() {
-		System.out.println("hello yoo!!!");
+		System.out.println("hello yoo!!!" + myTestService.apply());
 	}
 }

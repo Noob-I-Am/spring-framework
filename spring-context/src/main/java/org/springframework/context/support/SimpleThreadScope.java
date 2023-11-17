@@ -66,6 +66,7 @@ public class SimpleThreadScope implements Scope {
 
 	@Override
 	public Object get(String name, ObjectFactory<?> objectFactory) {
+		//获取scope缓存
 		Map<String, Object> scope = this.threadScope.get();
 		Object scopedObject = scope.get(name);
 		if (scopedObject == null) {

@@ -8,6 +8,17 @@
     </bean>
     <bean id="mtAddService" class="org.springframework.service.impl.MyTestAddServiceImpl">
     </bean>
+
+	<bean id="lifeCycle" class="org.springframework.beans.LifeCycleBean" init-method="initMethod" destroy-method="destroyMethod" >
+		<property name="test" value="yes"/>
+	</bean>
+
+<!--	<bean id="beanA" class="org.springframework.beans.circularReference.Impl.BeanAImpl">-->
+<!--		<property name="beanB" ref="beanA"></property>-->
+<!--	</bean>-->
+<!--	<bean id="beanB" class="org.springframework.beans.circularReference.Impl.BeanBImpl">-->
+<!--		<property name="beanA" ref="beanA"></property>-->
+<!--	</bean>-->
 	<context:component-scan base-package="org.springframework.beans" />
 
 </beans>
